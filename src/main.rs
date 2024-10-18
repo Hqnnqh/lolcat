@@ -17,7 +17,7 @@ fn main() {
     let mut filename: String = "".to_string();
     let mut c = parse_cli_args(&mut filename);
 
-    if filename == "" {
+    if filename.is_empty() {
         let stdin = io::stdin(); // For lifetime reasons
         cat::print_chars_lol(
             BufReader::new(stdin.lock()).chars().map(|r| r.unwrap()),
